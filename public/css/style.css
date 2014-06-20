@@ -1,0 +1,152 @@
+
+		footer#foot {
+		    background-attachment: scroll;
+		    background-clip: border-box;
+		    background-color: #333333;
+		    background-image: none;
+		    background-origin: padding-box;
+		    background-position: 0 0;
+		    background-repeat: repeat;
+		    background-size: auto auto;
+		    border-top-color: rgba(0, 0, 0, 0.1);
+		    border-top-style: solid;
+		    border-top-width: 4px;
+		    float: left;
+		    padding-bottom: 15px;
+		    padding-left: 0;
+		    padding-right: 0;
+		    padding-top: 15px;
+		    position: relative;
+		    width: 100%;
+		    z-index: 99
+		}
+		.textcenter{
+			text-align: center;
+		}
+		h3#attendance{
+			padding-left: 30em;
+			color: #F4645F;
+			font-family: 'Helvetica', Century Gothic;
+		}
+		nav#primary {
+		    background-attachment: scroll;
+		    background-clip: border-box;
+		    background-color: #FFFFFF;
+		    background-image: none;
+		    background-origin: padding-box;
+		    background-position: 0 0;
+		    background-repeat: repeat;
+		    background-size: auto auto;
+		    border-bottom-color: #E5E5E5;
+		    border-bottom-style: solid;
+		    border-bottom-width: 1px;
+		    box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.03);
+		    float: left;
+		    z-index: 999;
+		    position: relative;
+		    width: 100%;
+		    top: 0px;
+		    opacity: 1;
+		}
+		html{
+			background-color: #FFC8C8;
+			font-family: source-sans-pro,helvetica,arial,sans-serif;
+
+		}
+		article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+		    display: block;
+		    margin-bottom: 0;
+		    margin-left: auto;
+		    margin-right: auto;
+		    margin-top: 0;
+		}
+
+		nav#primary ul li {
+		    float: left;
+		    padding-bottom: 25px;
+		    padding-left: 0;
+		    padding-right: 0;
+		    padding-top: 25px;
+		}
+		li {
+		    font-size: 15px;
+		    line-height: 1.5em;
+		    display: list-item;
+		}
+
+	.boxed {
+	    margin-bottom: 0;
+	    margin-left: auto;
+	    margin-right: auto;
+	    margin-top: 0;
+	    padding-bottom: 0;
+	    padding-left: 0;
+	    padding-right: 0;
+	    padding-top: 0;
+	    width: 1024px;
+	}
+
+	nav#primary ul li.current-item a, nav#primary ul li a:hover {
+	    color: #F4645F;
+	}
+	nav#primary ul li a {
+	    font-size: 12px;
+	    font-weight: 600;
+	    letter-spacing: 1px;
+	    padding-bottom: 0;
+	    padding-left: 25px;
+	    padding-right: 0;
+	    padding-top: 0;
+	    text-transform: uppercase;
+	}
+	a:hover, a:active {
+	    outline-color: -moz-use-text-color;
+	    outline-style: none;
+	    outline-width: 0;
+	}
+	a {
+	    -moz-text-decoration-color: -moz-use-text-color;
+	    -moz-text-decoration-line: none;
+	    -moz-text-decoration-style: solid;
+	    transition-delay: 0s;
+	    transition-duration: 250ms;
+	    transition-property: all;
+	    transition-timing-function: linear;
+
+	}
+	nav ul, nav ol, #nav ul, #nav ol, #navigation ul, #navigation ol, .nav {
+	    list-style-image: none;
+	    list-style-position: outside;
+	    list-style-type: none;
+	    float: right;
+	    color:#969696;
+	    font-family: Arial;
+	}
+	nav#primary{
+		position: relative;
+	}
+	.col3{
+		width: 25%;
+		float:left;
+	}
+	.col5{
+		width: 75%;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 100px;
+	}
+	.row{
+		margin-left: 15px;
+		margin-right: 15px;
+
+	}
+	input[name=idnumber]{
+		height: 120px;
+		font-size: 100px;
+		width: 100%;
+		text-align: center;
+	}
+	h1.student{
+		text-align: center;
+		font-size: 60px;
+	}
