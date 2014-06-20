@@ -10,24 +10,31 @@
 @stop
 
 @section('content')
-<h1> EVENTS</h1>
+<h1>{{ $event->event_name }}</h1>
       <div class="row row-offcanvas row-offcanvas-right">
        <div class="col-xs-12 col-sm-9 event-row">
-       		@foreach( $events as $event)
-	       		<a href="{{ action('AttendanceController@events_view', $event->id) }}" >
-	       			<div class="event-box">
-	       				<h4>{{ $event->event_name }}</h4>
-	       				<p>{{ date("M d, Y",strtotime($event->event_date)) }}</p>
-	       			</div>
-	       		</a>
-       		@endforeach
+    		<table class='table table-striped'>
+    			<thead>
+    			<tr>
+    				<th>ID Number</th>
+    				<th>Student Name</th>
+    				<th>Course</th>
+    			</tr>
+    			</thead>
+    			<tr>
+    				@foreach($students as $student)
+    					<td>{{ $student->id }}</td>
+    					<td>{{ $student->student_name }}</td>
+    					<td>{{ $student->course_name }}</td>
+    				@endforeach
+    			</tr>
+    		</table>
        </div>
           
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
         	<div class="jumbotron">
-	    		<form class="search" role="form" action="new_student.php" method='get'>
-	      		<label>Search</label>
-    			<input type="text" class="form-control" placeholder="Search" name='search' required autofocus>
+            	<h5>Summary</h5>
+            	Attendee: {{ count($students) }}
           </div>
         </div><!--/span-->
       </div><!--/row-->

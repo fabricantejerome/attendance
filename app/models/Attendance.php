@@ -19,10 +19,10 @@ class Attendance extends Eloquent{
 	}
 
 	public function student(){
-		return $this->belongsTo('Student')
+		return $this->belongsTo('Student');
 	}
 	public function event(){
-		return $this->belongsTo('Event1')
+		return $this->belongsTo('Event1');
 	}
 
 	// each bear BELONGS to many picnic

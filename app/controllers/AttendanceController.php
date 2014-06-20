@@ -7,12 +7,58 @@ class AttendanceController extends BaseController{
 		return View::make('content.attendance');// using compact $tasks = 'tasks'
 	}
 	public function index_submit(){
-		
+		date_default_timezone_set('Asia/Manila');
+
 		$student = Student::find(Input::get('idnumber'));
-		if ( count($student))
+		if ( count($student)){
+			$events = DB::table('events')
+				->orderBy('id', 'desc')
+				->take(1)
+				->select('id')
+				->get();
+
+			foreach( $events as $event ){
+				$check = DB::table('attendances')
+					->where('attendances.event_id', '=', $event->id)
+					->where('attendances.student_id', '=', $student->id)
+					->get();
+
+				if ( count($check) ){
+
+					return Redirect::action('AttendanceController@index')->with('student', $student->student_name );
+				}
+				else{
+					$now = new DateTime();
+					//return $now->format('h:i:s A');
+					$event1 = Event1::find($event->id);
+
+					$attendance = new Attendance;
+					$attendance->event()->associate($event1);
+					$attendance->student()->associate($student);
+					$attendance->time = $now->format('G:i:s');
+					$attendance->save();
+
+					return Redirect::action('AttendanceController@index')->with('student', $student->student_name );
+				}	
+			}
 			return Redirect::action('AttendanceController@index')->with('student', $student->student_name );
-		else
+		}
+		else{
 			return Redirect::action('AttendanceController@index');
+		}
+		
+	}
+	public function events_view($id){
+		$event = Event1::find($id);
+
+		$students = DB::table('attendances')
+			->where('attendances.event_id', '=', $id)
+			->join('students', 'attendances.student_id', '=', 'students.id')
+			->join('courses', 'students.course_id', '=', 'courses.id')
+			->select('students.id', 'students.student_name', 'courses.course_name' )
+			->get();
+			
+		return View::make('content.event_list', compact('event', 'students'));
 	}
 
 	public function login()

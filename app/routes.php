@@ -22,6 +22,7 @@ Route::get('/new/student', 'AttendanceController@new_student');
 Route::get('/new/course', 'AttendanceController@new_course');
 Route::get('/new/college', 'AttendanceController@new_college');
 Route::get('/events', 'AttendanceController@events');
+Route::get('/events/view/{id}', 'AttendanceController@events_view');
 
 
 Route::post('/attendance/submit', 'AttendanceController@index_submit');

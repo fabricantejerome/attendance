@@ -21,7 +21,7 @@
 				@if(Session::has('student'))
 					<h1 class="student">{{ Session::get('student') }}</h1>
 				@else
-					<h1 class="student">Name of the Student and College</h1>
+					<h1 class="student">Name of the Student</h1>
 				@endif
 				<input type="text" name="idnumber" autofocus="autofocus" class="form-control"/>
 			{{ Form::close() }}
