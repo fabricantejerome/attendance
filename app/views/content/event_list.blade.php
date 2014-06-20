@@ -21,13 +21,14 @@
     				<th>Course</th>
     			</tr>
     			</thead>
-    			<tr>
-    				@foreach($students as $student)
-    					<td>{{ $student->id }}</td>
-    					<td>{{ $student->student_name }}</td>
-    					<td>{{ $student->course_name }}</td>
-    				@endforeach
-    			</tr>
+                @foreach($students as $student)
+                <tr>
+                    <td>{{ $student->id }}</td>
+                    <td>{{ $student->student_name }}</td>
+                    <td>{{ $student->course_name }}</td>
+                    
+                </tr>
+                @endforeach
     		</table>
        </div>
           
