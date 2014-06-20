@@ -18,7 +18,11 @@
 		<br />
 		<div class="col5">
 			{{ Form::open(array('action' => 'AttendanceController@index_submit')) }}
-				<h1 class="student">Name of the Student and College</h1>
+				@if(Session::has('student'))
+					<h1 class="student">{{ Session::get('student') }}</h1>
+				@else
+					<h1 class="student">Name of the Student and College</h1>
+				@endif
 				<input type="text" name="idnumber" autofocus="autofocus" class="form-control"/>
 			{{ Form::close() }}
 		</div>

@@ -28,5 +28,8 @@ Route::post('/attendance/submit', 'AttendanceController@index_submit');
 Route::post('/login/submit', 'AttendanceController@login_submit');
 Route::post('/new/college', 'AttendanceController@college_submit');
 Route::post('/new/course', 'AttendanceController@course_submit');
+Route::post('/new/student', 'AttendanceController@student_submit');
+Route::post('/new/event', 'AttendanceController@event_submit');
+
 
 

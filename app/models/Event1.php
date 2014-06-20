@@ -1,25 +1,29 @@
 <?php
 
-class Bear extends Eloquent{
+class Event1 extends Eloquent{
 	// MASS ASSIGNMENT -------------------------------------------------------
 	// define which attributes are mass assignable (for security)
 	// we only want these 3 attributes able to be filled
-	protected $fillable = array('name', 'type', 'danger_level');
+	protected $fillable = array('event_name', 'event_date');
+
+	public $timestamps = false;
+	protected $table = 'events';
 
 	// DEFINE RELATIONSHIPS --------------------------------------------------
 	// each bear HAS one fish to eat
-	public function fish() {
-		return $this->hasOne('Fish'); // this matches the Eloquent model
-	}
+
 
 	// each bear climbs many trees
-	public function trees() {
-		return $this->hasMany('Tree');
+
+	public function students(){
+		return $this->belongsToMany('Student', 'attendances', 'event_id', 'student_id');
 	}
+
+	public function attendances(){
+		return $this->hasMany('Attendance');
+	}
+
 
 	// each bear BELONGS to many picnic
 	// define our pivot table also
-	public function picnics() {
-		return $this->belongsToMany('Picnic', 'bears_picnics', 'bear_id', 'picnic_id');
-	}
 }

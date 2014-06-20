@@ -12,18 +12,22 @@
 @section('content')
 	<h1>NEW STUDENT</h1>
       <div class="row row-offcanvas row-offcanvas-right">
-	      <form class="form-box" role="form" action="new_student.php" method='get'>
-	      <label>ID Number</label>
-    		<input type="text" class="form-control" placeholder="20XXXXX" name='id' required autofocus>
-	      <label>Full Name</label>
-		    <input type="text" class="form-control" placeholder="Dela Cruz, John Michael M." name='name' required>
-	      <label>Course</label>
-	      
-		  <select  class="form-control" name=course_id>
-		  </select>
-		  
-		  
-		    <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-    	</form>
+	    {{ Form::open(array('action' => 'AttendanceController@student_submit', 'class' => 'form-box')) }}
+	      <label>Course Name</label>
+		      <label for="id">ID Number</label>
+	    		<input type="text" class="form-control" placeholder="20XXXXX" name='id' required autofocus>
+		      <label for="name">Full Name</label>
+			    <input type="text" class="form-control" placeholder="Dela Cruz, John Michael M." name="name" required>
+		      <label>Course</label>
+		      
+			  <select  class="form-control" name="course">
+			  		@foreach( $courses as $course)
+			  			<option value="{{ $course->id }}">{{ $course->course_name }}</option>
+			  		@endforeach
+			  </select>
+			  
+			  
+			    <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    	{{ Form::close() }}
       </div><!--/row-->
 @stop
